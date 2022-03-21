@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    // Declare variable
+    char nama[20], pendidikan[20];
+    int jabatan, jamKerja, formula, formula2, lembur, jamLembur, gaji, tunjanganJabatan, tunjanganPendidikan;
+    float percentage, percentage2;
+    int gajiPokok = 2000000;
+    
+    printf("PROGRAM HITUNG GAJI KARYAWAN\n");
+    
+    // user input
+    printf("Nama Karyawan: ");
+    scanf("%s", nama);
+
+    printf("Golongan Jabatan: ");
+    scanf("%d",&jabatan);
+    
+    printf("Pendidikan: ");
+    scanf("%s", pendidikan);
+
+    printf("Jumlah jam kerja: ");
+    scanf("%d", &jamKerja);
+
+    // switch case for pendidikan
+    switch (jabatan){
+        case 1:
+            percentage = (float)5/100;
+            break;
+        
+        case 2:
+            percentage = (float)10/100;
+            break;
+            
+        case 3:
+            percentage = (float)15/100;
+            break;
+            
+        default:
+            printf("Unknown input");
+            break;
+    }
+    
+    // switch case for pendidikan
+    if (strcmp(pendidikan, "sma") == 0){
+        percentage2 = (float)2.5/100;    
+    }
+    else if (strcmp(pendidikan, "d3") == 0 ){
+        percentage2 = (float)5/100;    
+    }
+    else if (strcmp(pendidikan, "s1") == 0){
+        percentage2 = (float)10/100;    
+    }
+    else{
+        printf("Unknown input");
+    }
+    
+    // formula
+    formula = 2000000 * percentage;
+    formula2 = 2000000 * percentage2;
+    jamLembur = jamKerja - (8*30); // Assume that one month are 30 days
+    lembur = jamLembur * 3000;
+    gaji = gajiPokok + formula + formula2 + lembur;
+    
+    //output
+    printf("\nNama Karyawan %s",nama);
+    printf("\n\tTunjangan Jabatan Rp %d", formula);
+    printf("\n\tTunjangan Pendidikan Rp %d", formula2);
+    printf("\n\tHonor Lembur Rp %d", lembur);
+    printf("\nTotal Gaji Rp %d", gaji);
+    
+    return 0;
+} 
