@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+    int hargaJam = 2000, jam, formula, hargaDiskon;
+    float diskon;
+    
+    diskon = (float)20/100;
+    printf("Berapa jam ada ingin main: "); scanf("%d", &jam);
+    
+    formula = jam * hargaJam;
+    hargaDiskon = formula * diskon;
+    if (jam > 5){
+        printf("Biaya yang harus anda bayar Rp %d", hargaDiskon);
+    }
+    
+    else{
+        printf("Biaya yang harus anda bayar Rp %d", formula);
+    }
+    
+    return 0;
+}
