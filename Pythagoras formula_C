@@ -1,0 +1,54 @@
+//Pythagoras formula using sqrt function
+
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+int main(){
+    int sisi_miring, sisi_samping, sisi_samping2;
+    float rumus;
+    char options[1];
+
+    printf("Apa yang ditanyakan ?\n\nSisi samping(a)(b), sisi miring(c) = "); scanf("%s", options);
+
+    if (strcmp(options,"a") == 0)
+    {
+        printf("\nBerapa panjang sisi samping (b)? ");
+        scanf("%d", &sisi_samping);
+
+        printf("\nBerapa panjang sisi miring (c)? ");
+        scanf("%d", &sisi_miring);
+
+        rumus = sqrt((sisi_miring*sisi_miring) - (sisi_samping*sisi_samping));
+        printf("\nPanjang sisi samping (a) =  %.2f", rumus);
+    }
+
+    else if (strcmp(options,"b") == 0)
+    {
+        printf("\nBerapa panjang sisi samping (a)? ");
+        scanf("%d", &sisi_samping);
+
+        printf("\nBerapa panjang sisi miring (c)? ");
+        scanf("%d", &sisi_miring);
+
+        rumus = sqrt((sisi_miring*sisi_miring) - (sisi_samping*sisi_samping));
+        printf("\nPanjang sisi samping (b) =  %.2f", rumus);
+    }
+
+    else if (strcmp(options,"c") == 0)
+    {
+        printf("\nBerapa panjang sisi samping (a)? ");
+        scanf("%d", &sisi_samping2);
+
+        printf("\nBerapa panjang sisi samping (b)? ");
+        scanf("%d", &sisi_samping);
+
+        rumus = sqrt((sisi_samping2*sisi_samping2) + (sisi_samping*sisi_samping));
+        printf("\nPanjang sisi miring (c) =  %.2f", rumus);
+    }
+
+    else {
+        printf("\nUnknown input,\nsilahkan ketikkan a atau b untuk mencari sisi samping, dan c untuk mencari sisi miring");
+    }
+    return 0;
+}
